@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Hi! Welcome to Bulletin Board App!</h1>
+  <div class="messageList">
+    <h3>Logs</h3>
+    <ul>
+      <!-- Below is embedded-javascript -->
+      <% for (var i=0; i< rows.length; i++){ %>
+        <!-- For plain javascript logic codes, only <% %>.
+        But for display javascript in HTML tags ,<%= %>. -->
+        <li><a href= <%="messages/#m"+rows[i].id %> > <%= rows[i].title %> </a></li>
+      <% } %>
+    </ul>
+  </div>
+  <!-- Routing through action="/write", not "messages" to post it on the mboard page -->
+  <form class="" action="/write" method="post">
+    <input type="text" name="email" placeholder="Email address">
+    <input type="text" name="title" placeholder="Title">
+    <br>
+      <textarea name="body" rows="8" cols="80" placeholder="Enter message"></textarea>
+    </br>
+    <input type="submit" value="Post it!">
+  </form>
+</body>
+</html>

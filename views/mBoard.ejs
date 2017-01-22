@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Message Board</title>
+</head>
+<body>
+  <h1 class="pageTitile">Messages</h1>
+  <% for (var i=0; i< rows.length; i++){ %>
+    <div class="messages" id=<%= "m" + rows[i].id %>>
+      <h3 class="email"><%= rows[i].email %></h3>
+      <h4 class="title"><%= rows[i].title %></h4>
+      <p class="body"><%= rows[i].body %></p>
+    </div>
+  <% } %>
+  <div class="homeButton">
+    <h1 id="homeButton"><a href= <%="/"%>> Home </h1>
+  </div>
+</body>
+</html>
