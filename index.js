@@ -70,7 +70,7 @@ app.post("/write", function(req, res){
     if (err){
       return console.log("errorPosting");
     }
-    client.query("insert into messages (email, title, body) values ('" +req.body.email + "','" + req.body.title + "','" + req.body.body + "');", function(err,result){
+    client.query(`"insert into messages (email, title, body) values ('" +req.body.email + "','" + req.body.title + "','" + req.body.body + "'`);", function(err,result){
       //(`insert into messages (email, title, body) values ('`+ req.body.email + `','` + req.body.title + `','` + req.body.body +`');`
       // values ('${req.body.email}','${req.body.title}','${req.body.body}');`
       if (err){
