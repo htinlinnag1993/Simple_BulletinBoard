@@ -1,0 +1,1198 @@
+
+Below code was working properly to deploy the web app properly because I was working with the un-updated old version master from github repo that ddidnt have Procfile and newly-migrated database code(shifting from my local database to heroku database with heroku plug-in; the whole Bulletinb database should be on Heroku database for using plug-in, not in my local machine).
+
+
+
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp
+$ heroku login
+Enter your Heroku credentials.
+Email: htinlinnag1993@gmail.com
+Password (typing will be hidden):
+Logged in as htinlinnag1993@gmail.com
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp
+$ git clone https://github.com/htinlinnag1993/Simple_BulletinBoard.git
+fatal: destination path 'Simple_BulletinBoard' already exists and is not an empty directory.
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp
+$ cd Simple_BulletinBoard
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ touch Procfile
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku create
+Creating app... done, afternoon-castle-42115
+https://afternoon-castle-42115.herokuapp.com/ | https://git.heroku.com/afternoon-castle-42115.git
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git status
+On branch Version_1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Procfile
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add .
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "Deploying"
+[Version_1 96a8c2b] Deploying
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Procfile
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Counting objects: 693, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (625/625), done.
+Writing objects: 100% (693/693), 754.65 KiB | 1.20 MiB/s, done.
+Total 693 (delta 119), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NPM_CONFIG_PRODUCTION=true
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version (latest stable) via semver.io...
+remote:        Downloading and installing node 6.9.1...
+remote:        Using default npm version: 3.10.8
+remote:
+remote: -----> Restoring cache
+remote:        Skipping cache restore (new runtime signature)
+remote:
+remote: -----> Building dependencies
+remote:        Prebuild detected (node_modules already exists)
+remote:        Rebuilding any native modules
+remote:        body-parser@1.16.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/body-parser
+remote:        bytes@2.4.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/bytes
+remote:        content-type@1.0.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/content-type
+remote:        debug@2.6.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/body-parser/node_modules/debug
+remote:        ms@0.7.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/body-parser/node_modules/ms
+remote:        depd@1.1.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/depd
+remote:        http-errors@1.5.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/http-errors
+remote:        inherits@2.0.3 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/inherits
+remote:        setprototypeof@1.0.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/setprototypeof
+remote:        statuses@1.3.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/statuses
+remote:        iconv-lite@0.4.15 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/iconv-lite
+remote:        on-finished@2.3.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/on-finished
+remote:        ee-first@1.1.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/ee-first
+remote:        qs@6.2.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/body-parser/node_modules/qs
+remote:        raw-body@2.2.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/raw-body
+remote:        unpipe@1.0.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/unpipe
+remote:        type-is@1.6.14 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/type-is
+remote:        media-typer@0.3.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/media-typer
+remote:        mime-types@2.1.14 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/mime-types
+remote:        mime-db@1.26.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/mime-db
+remote:        ejs@2.5.5 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/ejs
+remote:        express@4.14.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/express
+remote:        accepts@1.3.3 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/accepts
+remote:        negotiator@0.6.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/negotiator
+remote:        array-flatten@1.1.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/array-flatten
+remote:        content-disposition@0.5.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/content-disposition
+remote:        cookie@0.3.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/cookie
+remote:        cookie-signature@1.0.6 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/cookie-signature
+remote:        debug@2.2.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/debug
+remote:        ms@0.7.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/ms
+remote:        encodeurl@1.0.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/encodeurl
+remote:        escape-html@1.0.3 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/escape-html
+remote:        etag@1.7.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/etag
+remote:        finalhandler@0.5.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/finalhandler
+remote:        fresh@0.3.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/fresh
+remote:        merge-descriptors@1.0.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/merge-descriptors
+remote:        methods@1.1.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/methods
+remote:        parseurl@1.3.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/parseurl
+remote:        path-to-regexp@0.1.7 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/path-to-regexp
+remote:        proxy-addr@1.1.3 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/proxy-addr
+remote:        forwarded@0.1.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/forwarded
+remote:        ipaddr.js@1.2.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/ipaddr.js
+remote:        qs@6.2.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/qs
+remote:        range-parser@1.2.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/range-parser
+remote:        send@0.14.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/send
+remote:        destroy@1.0.4 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/destroy
+remote:        mime@1.3.4 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/mime
+remote:        serve-static@1.11.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/serve-static
+remote:        utils-merge@1.0.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/utils-merge
+remote:        vary@1.1.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/vary
+remote:        pg@6.1.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/pg
+remote:        buffer-writer@1.0.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/buffer-writer
+remote:        packet-reader@0.2.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/packet-reader
+remote:        pg-connection-string@0.1.3 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/pg-connection-string
+remote:        pg-pool@1.6.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/pg-pool
+remote:        generic-pool@2.4.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/generic-pool
+remote:        object-assign@4.1.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/object-assign
+remote:        pg-types@1.11.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/pg-types
+remote:        ap@0.2.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/ap
+remote:        postgres-array@1.0.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/postgres-array
+remote:        postgres-bytea@1.0.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/postgres-bytea
+remote:        postgres-date@1.0.3 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/postgres-date
+remote:        postgres-interval@1.0.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/postgres-interval
+remote:        xtend@4.0.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/xtend
+remote:        pgpass@1.0.1 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/pgpass
+remote:        split@1.0.0 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/split
+remote:        through@2.3.8 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/through
+remote:        semver@4.3.2 /tmp/build_08de2bf6b2fed8a12928c5497582ff65/node_modules/semver
+remote:        Installing any new modules (package.json)
+remote:
+remote: -----> Caching build
+remote:        Clearing previous node cache
+remote:        Saving 2 cacheDirectories (default):
+remote:        - node_modules
+remote:        - bower_components (nothing to cache)
+remote:
+remote: -----> Build succeeded!
+remote:        ├── body-parser@1.16.0
+remote:        ├── ejs@2.5.5
+remote:        ├── express@4.14.0
+remote:        └── pg@6.1.2
+remote:
+remote:  !     This app may not specify any way to start a node process
+remote:        https://devcenter.heroku.com/articles/nodejs-support#default-web-process-type
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 14.1M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://afternoon-castle-42115.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/afternoon-castle-42115.git
+ * [new branch]      master -> master
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs
+2017-01-23T18:44:01.566208+00:00 app[api]: Release v1 created by user htinlinnag1993@gmail.com
+2017-01-23T18:44:01.566208+00:00 app[api]: Initial release by user htinlinnag1993@gmail.com
+2017-01-23T18:44:01.716262+00:00 app[api]: Release v2 created by user htinlinnag1993@gmail.com
+2017-01-23T18:44:01.716262+00:00 app[api]: Enable Logplex by user htinlinnag1993@gmail.com
+2017-01-23T18:45:12.464162+00:00 heroku[slug-compiler]: Slug compilation started
+2017-01-23T18:45:12.464167+00:00 heroku[slug-compiler]: Slug compilation finished
+2017-01-23T18:45:12.107876+00:00 app[api]: Release v3 created by user htinlinnag1993@gmail.com
+2017-01-23T18:45:12.107876+00:00 app[api]: Deploy 4515ecb by user htinlinnag1993@gmail.com
+2017-01-23T18:45:12.125724+00:00 app[api]: Scaled to web@1:Free by user htinlinnag1993@gmail.com
+2017-01-23T18:45:14.276161+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T18:45:16.929314+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T18:45:16.929795+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T18:45:16.930200+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T18:45:16.930454+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T18:45:16.932805+00:00 app[web.1]:
+2017-01-23T18:45:16.934476+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T18:45:16.934752+00:00 app[web.1]: npm ERR!
+2017-01-23T18:45:16.934936+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T18:45:16.935120+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T18:45:16.948802+00:00 app[web.1]:
+2017-01-23T18:45:16.949041+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T18:45:16.949198+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T18:45:17.038084+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T18:45:17.050785+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T18:45:17.051833+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T18:45:18.262039+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T18:45:20.370551+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T18:45:20.370797+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T18:45:20.370949+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T18:45:20.371093+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T18:45:20.372588+00:00 app[web.1]:
+2017-01-23T18:45:20.373552+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T18:45:20.373700+00:00 app[web.1]: npm ERR!
+2017-01-23T18:45:20.373769+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T18:45:20.373838+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T18:45:20.382390+00:00 app[web.1]:
+2017-01-23T18:45:20.382539+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T18:45:20.382606+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T18:45:20.492213+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T18:45:20.476761+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T18:45:21.775090+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9f9f456a-4aa0-4807-bf49-1a26f6437fba fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:21.974972+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=79f8c085-8940-4ac5-b5ae-0733af512570 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.303360+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=5377f92e-dd84-45df-a919-5f2a49ef1dfd fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.086061+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=5a71b493-0e63-4355-9228-7ee25600b4b7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.068515+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9c1e4702-f92c-4a60-94e8-c86b8af55e15 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.541130+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=3106da0a-8ddc-4b7f-a5b2-4f232d2c3bb8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add .
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "index.js"
+[Version_1 e82231d] index.js
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs --tails
+ !    Error: Unexpected flag --tails
+ !    Usage: heroku logs
+ !
+ !    This flag is invalid for this command. Here are the accepted flags:
+ !     -a, --app APP       # app to run command against
+ !     -d, --dyno DYNO     # dyno to limit filter by
+ !     -n, --num NUM       # number of lines to display
+ !     -r, --remote REMOTE # git remote of app to run command against
+ !     -s, --source SOURCE # log source to limit filter by
+ !     -t, --tail          # continually stream logs
+ !     --force-colors      # force use of colors (even on non-tty output)
+ !
+ !    See more information with heroku logs --help
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs --tail
+2017-01-23T18:44:01.566208+00:00 app[api]: Release v1 created by user htinlinnag1993@gmail.com
+2017-01-23T18:44:01.566208+00:00 app[api]: Initial release by user htinlinnag1993@gmail.com
+2017-01-23T18:44:01.716262+00:00 app[api]: Release v2 created by user htinlinnag1993@gmail.com
+2017-01-23T18:44:01.716262+00:00 app[api]: Enable Logplex by user htinlinnag1993@gmail.com
+2017-01-23T18:45:12.464162+00:00 heroku[slug-compiler]: Slug compilation started
+2017-01-23T18:45:12.464167+00:00 heroku[slug-compiler]: Slug compilation finished
+2017-01-23T18:45:12.107876+00:00 app[api]: Release v3 created by user htinlinnag1993@gmail.com
+2017-01-23T18:45:12.107876+00:00 app[api]: Deploy 4515ecb by user htinlinnag1993@gmail.com
+2017-01-23T18:45:12.125724+00:00 app[api]: Scaled to web@1:Free by user htinlinnag1993@gmail.com
+2017-01-23T18:45:14.276161+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T18:45:16.929314+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T18:45:16.929795+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T18:45:16.930200+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T18:45:16.930454+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T18:45:16.932805+00:00 app[web.1]:
+2017-01-23T18:45:16.934476+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T18:45:16.934752+00:00 app[web.1]: npm ERR!
+2017-01-23T18:45:16.934936+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T18:45:16.935120+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T18:45:16.948802+00:00 app[web.1]:
+2017-01-23T18:45:16.949041+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T18:45:16.949198+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T18:45:17.038084+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T18:45:17.050785+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T18:45:17.051833+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T18:45:18.262039+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T18:45:20.370551+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T18:45:20.370797+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T18:45:20.370949+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T18:45:20.371093+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T18:45:20.372588+00:00 app[web.1]:
+2017-01-23T18:45:20.373552+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T18:45:20.373700+00:00 app[web.1]: npm ERR!
+2017-01-23T18:45:20.373769+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T18:45:20.373838+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T18:45:20.382390+00:00 app[web.1]:
+2017-01-23T18:45:20.382539+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T18:45:20.382606+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T18:45:20.492213+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T18:45:20.476761+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T18:45:21.775090+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9f9f456a-4aa0-4807-bf49-1a26f6437fba fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:21.974972+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=79f8c085-8940-4ac5-b5ae-0733af512570 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.303360+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=5377f92e-dd84-45df-a919-5f2a49ef1dfd fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.086061+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=5a71b493-0e63-4355-9228-7ee25600b4b7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.068515+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9c1e4702-f92c-4a60-94e8-c86b8af55e15 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.541130+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=3106da0a-8ddc-4b7f-a5b2-4f232d2c3bb8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:19.355748+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=29e8702f-06b8-490a-9e6f-cb1a66152afa fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:19.908604+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=38c5d5e1-7ad5-4cf8-bfda-ea46a858e5cc fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:22.807488+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=331a46b9-a115-4511-839b-84c7e986f912 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.008632+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7b7558a3-0326-422b-b949-d61d2eb4aa83 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.468073+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=6d879a0a-e18e-4f47-8d9c-d9fd25700ea8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.690739+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7d8b40a6-4df3-468e-b989-120c1f88f02d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.327209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b9159eec-6ca8-46b8-8cc2-dc349567116e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.562346+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=6b42518c-d26c-4aae-8179-b1a9c6291b2d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add .
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "index.js"
+[Version_1 c1bee19] index.js
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add .
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "fixing for deploy"
+[Version_1 cf6c5e6] fixing for deploy
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ $ heroku addons:create heroku-postgresql:hobby-dev
+bash: $: command not found
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku addons:create heroku-postgresql:hobby-dev
+Creating heroku-postgresql:hobby-dev on afternoon-castle-42115... free
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pg:copy
+Created postgresql-clear-28221 as DATABASE_URL
+Use heroku addons:docs heroku-postgresql to view documentation
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku pg:psql
+--> Connecting to postgresql-clear-28221
+psql (9.6.1)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+afternoon-castle-42115::DATABASE=> create table(
+afternoon-castle-42115::DATABASE(> id serial primary table,
+afternoon-castle-42115::DATABASE(> email text,
+afternoon-castle-42115::DATABASE(> title text,
+afternoon-castle-42115::DATABASE(> body text
+afternoon-castle-42115::DATABASE(> );
+ERROR:  syntax error at or near "("
+LINE 1: create table(
+                    ^
+afternoon-castle-42115::DATABASE=> create table messages (
+afternoon-castle-42115::DATABASE(> id serial primary table,
+afternoon-castle-42115::DATABASE(> email text,
+afternoon-castle-42115::DATABASE(> title text,
+afternoon-castle-42115::DATABASE(> body text
+afternoon-castle-42115::DATABASE(> );
+ERROR:  syntax error at or near "table"
+LINE 2: id serial primary table,
+                          ^
+afternoon-castle-42115::DATABASE=> create table messages (
+afternoon-castle-42115::DATABASE(> id serial primary key,
+afternoon-castle-42115::DATABASE(> name text,
+afternoon-castle-42115::DATABASE(> title text);
+CREATE TABLE
+afternoon-castle-42115::DATABASE=> DROP TABLE messages;
+DROP TABLE
+afternoon-castle-42115::DATABASE=> create table messages (
+afternoon-castle-42115::DATABASE(> id serial primary key,
+afternoon-castle-42115::DATABASE(> email text,
+afternoon-castle-42115::DATABASE(> title text,
+afternoon-castle-42115::DATABASE(> body text
+afternoon-castle-42115::DATABASE(> );
+CREATE TABLE
+afternoon-castle-42115::DATABASE=> insert into messages (email, title, body) values ('derek@derek.com','Hi', 'Hi everyone');
+INSERT 0 1
+afternoon-castle-42115::DATABASE=> \q
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add .
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "Migrating messages table(local) to Heroku database and swapped some codes in index.js"
+[Version_1 567e94b] Migrating messages table(local) to Heroku database and swapped some codes in index.js
+ 1 file changed, 13 insertions(+), 5 deletions(-)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Everything up-to-date
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku log --tail
+ !    log is not a heroku command.
+ !    Perhaps you meant logs?
+ !    Run heroku _ to run heroku logs --tail.
+ !    Run heroku help for a list of available commands.
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs --tail
+2017-01-23T18:45:20.371093+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T18:45:20.372588+00:00 app[web.1]:
+2017-01-23T18:45:20.373552+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T18:45:20.373700+00:00 app[web.1]: npm ERR!
+2017-01-23T18:45:20.373769+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T18:45:20.373838+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T18:45:20.382390+00:00 app[web.1]:
+2017-01-23T18:45:20.382539+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T18:45:20.382606+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T18:45:20.492213+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T18:45:20.476761+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T18:45:21.775090+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9f9f456a-4aa0-4807-bf49-1a26f6437fba fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:21.974972+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=79f8c085-8940-4ac5-b5ae-0733af512570 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.303360+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=5377f92e-dd84-45df-a919-5f2a49ef1dfd fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.086061+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=5a71b493-0e63-4355-9228-7ee25600b4b7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.068515+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9c1e4702-f92c-4a60-94e8-c86b8af55e15 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.541130+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=3106da0a-8ddc-4b7f-a5b2-4f232d2c3bb8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:19.355748+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=29e8702f-06b8-490a-9e6f-cb1a66152afa fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:19.908604+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=38c5d5e1-7ad5-4cf8-bfda-ea46a858e5cc fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:22.807488+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=331a46b9-a115-4511-839b-84c7e986f912 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.008632+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7b7558a3-0326-422b-b949-d61d2eb4aa83 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.468073+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=6d879a0a-e18e-4f47-8d9c-d9fd25700ea8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.690739+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7d8b40a6-4df3-468e-b989-120c1f88f02d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.327209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b9159eec-6ca8-46b8-8cc2-dc349567116e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.562346+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=6b42518c-d26c-4aae-8179-b1a9c6291b2d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.106944+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c20dacfe-4f56-43dc-a083-24e82eca12af fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.312609+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=a1df2a35-5093-4ad3-bba9-1803c7bd294d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:09:25.146291+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:09:27.869694+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:09:32.436910+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:09:32.266237+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:09:32.267270+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:09:32.267768+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:09:32.268233+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:09:32.272399+00:00 app[web.1]:
+2017-01-23T19:09:32.274690+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:09:32.275014+00:00 app[web.1]: npm ERR!
+2017-01-23T19:09:32.295456+00:00 app[web.1]:
+2017-01-23T19:09:32.275209+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:09:32.275400+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:09:32.295789+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:09:32.296010+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:09:32.473927+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:47:39.990407+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=72e4e5f2-0071-4274-ba5b-385d680a6186 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:40.227453+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=58dfb9c4-7e31-4cff-b4d4-94d42c73ceca fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.429019+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=1d6ca7db-a3b3-4fff-86ff-627ac40070c8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.249959+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1863f889-a889-4d0b-9f9a-462a3218b73f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:51:33.258383+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:51:35.544490+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:51:39.864051+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:51:39.723950+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:51:39.724458+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:51:39.724728+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:51:39.724975+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:51:39.727672+00:00 app[web.1]:
+2017-01-23T19:51:39.729347+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:51:39.729761+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:51:39.729608+00:00 app[web.1]: npm ERR!
+2017-01-23T19:51:39.729923+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:51:39.744612+00:00 app[web.1]:
+2017-01-23T19:51:39.744907+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:51:39.745042+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:51:39.869791+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:55:21.799088+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=f03bf424-1b9c-4043-bd5c-7a4c33f4c4e1 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:55:22.153164+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ac89fb56-9d18-4398-9f44-e66e9b8fb65f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:31:44.366691+00:00 app[api]: Release v4 created by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.366691+00:00 app[api]: Attach DATABASE (@ref:postgresql-clear-28221) by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.690743+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:46.365716+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:50.568982+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:50.569424+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:50.569687+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:50.569927+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:50.572437+00:00 app[web.1]:
+2017-01-23T20:31:50.579983+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:50.580234+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:50.580396+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:50.580547+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:50.599590+00:00 app[web.1]:
+2017-01-23T20:31:50.599864+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:50.600030+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:50.772595+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:50.791575+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:31:50.792998+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:52.831241+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:56.206759+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:56.093878+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:56.094303+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:56.094524+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:56.094919+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:56.097149+00:00 app[web.1]:
+2017-01-23T20:31:56.098724+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:56.098943+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:56.099090+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:56.099223+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:56.112255+00:00 app[web.1]:
+2017-01-23T20:31:56.112497+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:56.112616+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:56.231971+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:43:07.638301+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b427fa39-f88e-4935-9c6d-55e1802a6994 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:43:07.878151+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=c4086644-09c8-4048-a342-2136d9ec6e0a fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs
+2017-01-23T18:45:20.371093+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T18:45:20.372588+00:00 app[web.1]:
+2017-01-23T18:45:20.373552+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T18:45:20.373700+00:00 app[web.1]: npm ERR!
+2017-01-23T18:45:20.373769+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T18:45:20.373838+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T18:45:20.382390+00:00 app[web.1]:
+2017-01-23T18:45:20.382539+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T18:45:20.382606+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T18:45:20.492213+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T18:45:20.476761+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T18:45:21.775090+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9f9f456a-4aa0-4807-bf49-1a26f6437fba fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:21.974972+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=79f8c085-8940-4ac5-b5ae-0733af512570 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.303360+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=5377f92e-dd84-45df-a919-5f2a49ef1dfd fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:26.086061+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=5a71b493-0e63-4355-9228-7ee25600b4b7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.068515+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=9c1e4702-f92c-4a60-94e8-c86b8af55e15 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:45:30.541130+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=3106da0a-8ddc-4b7f-a5b2-4f232d2c3bb8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:19.355748+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=29e8702f-06b8-490a-9e6f-cb1a66152afa fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:19.908604+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=38c5d5e1-7ad5-4cf8-bfda-ea46a858e5cc fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:22.807488+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=331a46b9-a115-4511-839b-84c7e986f912 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.008632+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7b7558a3-0326-422b-b949-d61d2eb4aa83 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.468073+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=6d879a0a-e18e-4f47-8d9c-d9fd25700ea8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:23.690739+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7d8b40a6-4df3-468e-b989-120c1f88f02d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.327209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b9159eec-6ca8-46b8-8cc2-dc349567116e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.562346+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=6b42518c-d26c-4aae-8179-b1a9c6291b2d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.106944+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c20dacfe-4f56-43dc-a083-24e82eca12af fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.312609+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=a1df2a35-5093-4ad3-bba9-1803c7bd294d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:09:25.146291+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:09:27.869694+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:09:32.436910+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:09:32.266237+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:09:32.267270+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:09:32.267768+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:09:32.268233+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:09:32.272399+00:00 app[web.1]:
+2017-01-23T19:09:32.274690+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:09:32.275014+00:00 app[web.1]: npm ERR!
+2017-01-23T19:09:32.295456+00:00 app[web.1]:
+2017-01-23T19:09:32.275209+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:09:32.275400+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:09:32.295789+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:09:32.296010+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:09:32.473927+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:47:39.990407+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=72e4e5f2-0071-4274-ba5b-385d680a6186 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:40.227453+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=58dfb9c4-7e31-4cff-b4d4-94d42c73ceca fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.429019+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=1d6ca7db-a3b3-4fff-86ff-627ac40070c8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.249959+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1863f889-a889-4d0b-9f9a-462a3218b73f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:51:33.258383+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:51:35.544490+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:51:39.864051+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:51:39.723950+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:51:39.724458+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:51:39.724728+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:51:39.724975+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:51:39.727672+00:00 app[web.1]:
+2017-01-23T19:51:39.729347+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:51:39.729761+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:51:39.729608+00:00 app[web.1]: npm ERR!
+2017-01-23T19:51:39.729923+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:51:39.744612+00:00 app[web.1]:
+2017-01-23T19:51:39.744907+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:51:39.745042+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:51:39.869791+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:55:21.799088+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=f03bf424-1b9c-4043-bd5c-7a4c33f4c4e1 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:55:22.153164+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ac89fb56-9d18-4398-9f44-e66e9b8fb65f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:31:44.366691+00:00 app[api]: Release v4 created by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.366691+00:00 app[api]: Attach DATABASE (@ref:postgresql-clear-28221) by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.690743+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:46.365716+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:50.568982+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:50.569424+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:50.569687+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:50.569927+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:50.572437+00:00 app[web.1]:
+2017-01-23T20:31:50.579983+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:50.580234+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:50.580396+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:50.580547+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:50.599590+00:00 app[web.1]:
+2017-01-23T20:31:50.599864+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:50.600030+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:50.772595+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:50.791575+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:31:50.792998+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:52.831241+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:56.206759+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:56.093878+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:56.094303+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:56.094524+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:56.094919+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:56.097149+00:00 app[web.1]:
+2017-01-23T20:31:56.098724+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:56.098943+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:56.099090+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:56.099223+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:56.112255+00:00 app[web.1]:
+2017-01-23T20:31:56.112497+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:56.112616+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:56.231971+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:43:07.638301+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b427fa39-f88e-4935-9c6d-55e1802a6994 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:43:07.878151+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=c4086644-09c8-4048-a342-2136d9ec6e0a fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add .
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "testing"
+[Version_1 c026641] testing
+ 1 file changed, 1 insertion(+)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Everything up-to-date
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git status
+On branch Version_1
+nothing to commit, working tree clean
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs --tail
+2017-01-23T18:47:23.690739+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7d8b40a6-4df3-468e-b989-120c1f88f02d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.327209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b9159eec-6ca8-46b8-8cc2-dc349567116e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:47:24.562346+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=6b42518c-d26c-4aae-8179-b1a9c6291b2d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.106944+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c20dacfe-4f56-43dc-a083-24e82eca12af fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.312609+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=a1df2a35-5093-4ad3-bba9-1803c7bd294d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:09:25.146291+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:09:27.869694+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:09:32.436910+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:09:32.266237+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:09:32.267270+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:09:32.267768+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:09:32.268233+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:09:32.272399+00:00 app[web.1]:
+2017-01-23T19:09:32.274690+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:09:32.275014+00:00 app[web.1]: npm ERR!
+2017-01-23T19:09:32.295456+00:00 app[web.1]:
+2017-01-23T19:09:32.275209+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:09:32.275400+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:09:32.295789+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:09:32.296010+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:09:32.473927+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:47:39.990407+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=72e4e5f2-0071-4274-ba5b-385d680a6186 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:40.227453+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=58dfb9c4-7e31-4cff-b4d4-94d42c73ceca fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.429019+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=1d6ca7db-a3b3-4fff-86ff-627ac40070c8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.249959+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1863f889-a889-4d0b-9f9a-462a3218b73f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:51:33.258383+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:51:35.544490+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:51:39.864051+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:51:39.723950+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:51:39.724458+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:51:39.724728+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:51:39.724975+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:51:39.727672+00:00 app[web.1]:
+2017-01-23T19:51:39.729347+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:51:39.729761+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:51:39.729608+00:00 app[web.1]: npm ERR!
+2017-01-23T19:51:39.729923+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:51:39.744612+00:00 app[web.1]:
+2017-01-23T19:51:39.744907+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:51:39.745042+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:51:39.869791+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:55:21.799088+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=f03bf424-1b9c-4043-bd5c-7a4c33f4c4e1 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:55:22.153164+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ac89fb56-9d18-4398-9f44-e66e9b8fb65f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:31:44.366691+00:00 app[api]: Release v4 created by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.366691+00:00 app[api]: Attach DATABASE (@ref:postgresql-clear-28221) by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.690743+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:46.365716+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:50.568982+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:50.569424+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:50.569687+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:50.569927+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:50.572437+00:00 app[web.1]:
+2017-01-23T20:31:50.579983+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:50.580234+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:50.580396+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:50.580547+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:50.599590+00:00 app[web.1]:
+2017-01-23T20:31:50.599864+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:50.600030+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:50.772595+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:50.791575+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:31:50.792998+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:52.831241+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:56.206759+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:56.093878+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:56.094303+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:56.094524+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:56.094919+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:56.097149+00:00 app[web.1]:
+2017-01-23T20:31:56.098724+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:56.098943+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:56.099090+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:56.099223+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:56.112255+00:00 app[web.1]:
+2017-01-23T20:31:56.112497+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:56.112616+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:56.231971+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:43:07.638301+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b427fa39-f88e-4935-9c6d-55e1802a6994 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:43:07.878151+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=c4086644-09c8-4048-a342-2136d9ec6e0a fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.327259+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=44698eea-b90c-4eb3-b506-4527958329bf fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.702198+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7563c4aa-0572-4444-af00-962f467736c7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.495071+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=f309523a-5df1-4ebe-b339-f5ff0dcb0f46 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.208008+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=68807d29-cfbe-469e-a169-cc6ef7e1dc50 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:19.692392+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c027324a-5134-4bf3-98c3-e5deb18d1b0e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:20.090443+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=82ed0eab-b52f-466b-8ff3-546209570967 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:43.605877+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:56:45.646957+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:56:48.482267+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:56:48.482752+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:56:48.482619+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:56:48.482875+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:56:48.484963+00:00 app[web.1]:
+2017-01-23T20:56:48.486594+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:56:48.487244+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:56:48.487061+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:56:48.486879+00:00 app[web.1]: npm ERR!
+2017-01-23T20:56:48.500039+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:56:48.499802+00:00 app[web.1]:
+2017-01-23T20:56:48.499967+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:56:48.591683+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:56:48.582443+00:00 heroku[web.1]: Process exited with status 1
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add .
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "testing"
+On branch Version_1
+nothing to commit, working tree clean
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Everything up-to-date
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs --tail
+2017-01-23T18:47:24.562346+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=6b42518c-d26c-4aae-8179-b1a9c6291b2d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.106944+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c20dacfe-4f56-43dc-a083-24e82eca12af fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T18:49:16.312609+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=a1df2a35-5093-4ad3-bba9-1803c7bd294d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:09:25.146291+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:09:27.869694+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:09:32.436910+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:09:32.266237+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:09:32.267270+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:09:32.267768+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:09:32.268233+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:09:32.272399+00:00 app[web.1]:
+2017-01-23T19:09:32.274690+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:09:32.275014+00:00 app[web.1]: npm ERR!
+2017-01-23T19:09:32.295456+00:00 app[web.1]:
+2017-01-23T19:09:32.275209+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:09:32.275400+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:09:32.295789+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:09:32.296010+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:09:32.473927+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:47:39.990407+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=72e4e5f2-0071-4274-ba5b-385d680a6186 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:40.227453+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=58dfb9c4-7e31-4cff-b4d4-94d42c73ceca fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.429019+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=1d6ca7db-a3b3-4fff-86ff-627ac40070c8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.249959+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1863f889-a889-4d0b-9f9a-462a3218b73f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:51:33.258383+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:51:35.544490+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:51:39.864051+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:51:39.723950+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:51:39.724458+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:51:39.724728+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:51:39.724975+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:51:39.727672+00:00 app[web.1]:
+2017-01-23T19:51:39.729347+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:51:39.729761+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:51:39.729608+00:00 app[web.1]: npm ERR!
+2017-01-23T19:51:39.729923+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:51:39.744612+00:00 app[web.1]:
+2017-01-23T19:51:39.744907+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:51:39.745042+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:51:39.869791+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:55:21.799088+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=f03bf424-1b9c-4043-bd5c-7a4c33f4c4e1 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:55:22.153164+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ac89fb56-9d18-4398-9f44-e66e9b8fb65f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:31:44.366691+00:00 app[api]: Release v4 created by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.366691+00:00 app[api]: Attach DATABASE (@ref:postgresql-clear-28221) by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.690743+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:46.365716+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:50.568982+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:50.569424+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:50.569687+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:50.569927+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:50.572437+00:00 app[web.1]:
+2017-01-23T20:31:50.579983+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:50.580234+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:50.580396+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:50.580547+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:50.599590+00:00 app[web.1]:
+2017-01-23T20:31:50.599864+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:50.600030+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:50.772595+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:50.791575+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:31:50.792998+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:52.831241+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:56.206759+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:56.093878+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:56.094303+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:56.094524+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:56.094919+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:56.097149+00:00 app[web.1]:
+2017-01-23T20:31:56.098724+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:56.098943+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:56.099090+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:56.099223+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:56.112255+00:00 app[web.1]:
+2017-01-23T20:31:56.112497+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:56.112616+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:56.231971+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:43:07.638301+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b427fa39-f88e-4935-9c6d-55e1802a6994 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:43:07.878151+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=c4086644-09c8-4048-a342-2136d9ec6e0a fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.327259+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=44698eea-b90c-4eb3-b506-4527958329bf fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.702198+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7563c4aa-0572-4444-af00-962f467736c7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.495071+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=f309523a-5df1-4ebe-b339-f5ff0dcb0f46 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.208008+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=68807d29-cfbe-469e-a169-cc6ef7e1dc50 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:19.692392+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c027324a-5134-4bf3-98c3-e5deb18d1b0e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:20.090443+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=82ed0eab-b52f-466b-8ff3-546209570967 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:43.605877+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:56:45.646957+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:56:48.482267+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:56:48.482752+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:56:48.482619+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:56:48.482875+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:56:48.484963+00:00 app[web.1]:
+2017-01-23T20:56:48.486594+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:56:48.487244+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:56:48.487061+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:56:48.486879+00:00 app[web.1]: npm ERR!
+2017-01-23T20:56:48.500039+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:56:48.499802+00:00 app[web.1]:
+2017-01-23T20:56:48.499967+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:56:48.591683+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:56:48.582443+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:58:37.274009+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=e9efb31c-e535-4cac-8c48-62095ef42c87 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:58:37.710750+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=9834a2b0-fbd6-4183-a722-a748fe6068df fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add -A
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git status
+On branch Version_1
+nothing to commit, working tree clean
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add -A
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "testing"
+On branch Version_1
+nothing to commit, working tree clean
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add -A
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "testing"
+[Version_1 041648a] testing
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Everything up-to-date
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ npm install
+npm WARN bulletin-app@1.0.0 No repository field.
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add -A
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "testing"
+On branch Version_1
+nothing to commit, working tree clean
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Everything up-to-date
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs --tail
+2017-01-23T19:09:32.267768+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:09:32.268233+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:09:32.272399+00:00 app[web.1]:
+2017-01-23T19:09:32.274690+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:09:32.275014+00:00 app[web.1]: npm ERR!
+2017-01-23T19:09:32.295456+00:00 app[web.1]:
+2017-01-23T19:09:32.275209+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:09:32.275400+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:09:32.295789+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:09:32.296010+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:09:32.473927+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:47:39.990407+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=72e4e5f2-0071-4274-ba5b-385d680a6186 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:40.227453+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=58dfb9c4-7e31-4cff-b4d4-94d42c73ceca fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.429019+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=1d6ca7db-a3b3-4fff-86ff-627ac40070c8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.249959+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1863f889-a889-4d0b-9f9a-462a3218b73f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:51:33.258383+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:51:35.544490+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:51:39.864051+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:51:39.723950+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:51:39.724458+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:51:39.724728+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:51:39.724975+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:51:39.727672+00:00 app[web.1]:
+2017-01-23T19:51:39.729347+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:51:39.729761+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:51:39.729608+00:00 app[web.1]: npm ERR!
+2017-01-23T19:51:39.729923+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:51:39.744612+00:00 app[web.1]:
+2017-01-23T19:51:39.744907+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:51:39.745042+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:51:39.869791+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:55:21.799088+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=f03bf424-1b9c-4043-bd5c-7a4c33f4c4e1 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:55:22.153164+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ac89fb56-9d18-4398-9f44-e66e9b8fb65f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:31:44.366691+00:00 app[api]: Release v4 created by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.366691+00:00 app[api]: Attach DATABASE (@ref:postgresql-clear-28221) by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.690743+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:46.365716+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:50.568982+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:50.569424+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:50.569687+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:50.569927+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:50.572437+00:00 app[web.1]:
+2017-01-23T20:31:50.579983+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:50.580234+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:50.580396+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:50.580547+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:50.599590+00:00 app[web.1]:
+2017-01-23T20:31:50.599864+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:50.600030+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:50.772595+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:50.791575+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:31:50.792998+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:52.831241+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:56.206759+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:56.093878+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:56.094303+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:56.094524+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:56.094919+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:56.097149+00:00 app[web.1]:
+2017-01-23T20:31:56.098724+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:56.098943+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:56.099090+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:56.099223+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:56.112255+00:00 app[web.1]:
+2017-01-23T20:31:56.112497+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:56.112616+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:56.231971+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:43:07.638301+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b427fa39-f88e-4935-9c6d-55e1802a6994 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:43:07.878151+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=c4086644-09c8-4048-a342-2136d9ec6e0a fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.327259+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=44698eea-b90c-4eb3-b506-4527958329bf fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.702198+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7563c4aa-0572-4444-af00-962f467736c7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.495071+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=f309523a-5df1-4ebe-b339-f5ff0dcb0f46 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.208008+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=68807d29-cfbe-469e-a169-cc6ef7e1dc50 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:19.692392+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c027324a-5134-4bf3-98c3-e5deb18d1b0e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:20.090443+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=82ed0eab-b52f-466b-8ff3-546209570967 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:43.605877+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:56:45.646957+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:56:48.482267+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:56:48.482752+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:56:48.482619+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:56:48.482875+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:56:48.484963+00:00 app[web.1]:
+2017-01-23T20:56:48.486594+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:56:48.487244+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:56:48.487061+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:56:48.486879+00:00 app[web.1]: npm ERR!
+2017-01-23T20:56:48.500039+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:56:48.499802+00:00 app[web.1]:
+2017-01-23T20:56:48.499967+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:56:48.591683+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:56:48.582443+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:58:37.274009+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=e9efb31c-e535-4cac-8c48-62095ef42c87 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:58:37.710750+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=9834a2b0-fbd6-4183-a722-a748fe6068df fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:00:59.208964+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=8496db5a-0065-460f-b8b1-212d55bf3ba4 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:00:59.600581+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=4355104c-5d76-4450-bdc7-7e3e79eb111d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:24.256831+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1246fbdd-9c36-4f7e-a447-6dda821087a2 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:24.685760+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=da01d258-f2ba-4798-9554-2b9ede53be0e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:39.477273+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=062f5080-4354-477d-a74f-9761c32135f9 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:40.037669+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ceef4580-5950-4246-aa66-d8f18f068019 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:04:21.092105+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=71932853-dab3-4c26-85f5-dc54f6bc6a52 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:04:21.771689+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=65565f7f-e072-4d2d-8af1-11a58757b32e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add -A
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory.
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add -A
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "testing"
+[Version_1 441e0b1] testing
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Everything up-to-date
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ pwd
+/d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ web: node index.js
+bash: web:: command not found
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku logs --tail
+2017-01-23T19:09:32.275014+00:00 app[web.1]: npm ERR!
+2017-01-23T19:09:32.295456+00:00 app[web.1]:
+2017-01-23T19:09:32.275209+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:09:32.275400+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:09:32.295789+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:09:32.296010+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:09:32.473927+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:47:39.990407+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=72e4e5f2-0071-4274-ba5b-385d680a6186 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:40.227453+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=58dfb9c4-7e31-4cff-b4d4-94d42c73ceca fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.429019+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=1d6ca7db-a3b3-4fff-86ff-627ac40070c8 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:47:44.249959+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1863f889-a889-4d0b-9f9a-462a3218b73f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:51:33.258383+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T19:51:35.544490+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T19:51:39.864051+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T19:51:39.723950+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T19:51:39.724458+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T19:51:39.724728+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T19:51:39.724975+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T19:51:39.727672+00:00 app[web.1]:
+2017-01-23T19:51:39.729347+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T19:51:39.729761+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T19:51:39.729608+00:00 app[web.1]: npm ERR!
+2017-01-23T19:51:39.729923+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T19:51:39.744612+00:00 app[web.1]:
+2017-01-23T19:51:39.744907+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T19:51:39.745042+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T19:51:39.869791+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T19:55:21.799088+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=f03bf424-1b9c-4043-bd5c-7a4c33f4c4e1 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T19:55:22.153164+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ac89fb56-9d18-4398-9f44-e66e9b8fb65f fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:31:44.366691+00:00 app[api]: Release v4 created by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.366691+00:00 app[api]: Attach DATABASE (@ref:postgresql-clear-28221) by user htinlinnag1993@gmail.com
+2017-01-23T20:31:44.690743+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:46.365716+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:50.568982+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:50.569424+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:50.569687+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:50.569927+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:50.572437+00:00 app[web.1]:
+2017-01-23T20:31:50.579983+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:50.580234+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:50.580396+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:50.580547+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:50.599590+00:00 app[web.1]:
+2017-01-23T20:31:50.599864+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:50.600030+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:50.772595+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:50.791575+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:31:50.792998+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:31:52.831241+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:31:56.206759+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:31:56.093878+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:31:56.094303+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:31:56.094524+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:31:56.094919+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:31:56.097149+00:00 app[web.1]:
+2017-01-23T20:31:56.098724+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:31:56.098943+00:00 app[web.1]: npm ERR!
+2017-01-23T20:31:56.099090+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:31:56.099223+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:31:56.112255+00:00 app[web.1]:
+2017-01-23T20:31:56.112497+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:31:56.112616+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:31:56.231971+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:43:07.638301+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=b427fa39-f88e-4935-9c6d-55e1802a6994 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:43:07.878151+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=c4086644-09c8-4048-a342-2136d9ec6e0a fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.327259+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=44698eea-b90c-4eb3-b506-4527958329bf fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:51:24.702198+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7563c4aa-0572-4444-af00-962f467736c7 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.495071+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=f309523a-5df1-4ebe-b339-f5ff0dcb0f46 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:52:00.208008+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=68807d29-cfbe-469e-a169-cc6ef7e1dc50 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:19.692392+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=c027324a-5134-4bf3-98c3-e5deb18d1b0e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:20.090443+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=82ed0eab-b52f-466b-8ff3-546209570967 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:56:43.605877+00:00 heroku[web.1]: State changed from crashed to starting
+2017-01-23T20:56:45.646957+00:00 heroku[web.1]: Starting process with command `npm start`
+2017-01-23T20:56:48.482267+00:00 app[web.1]: npm ERR! Linux 3.13.0-105-generic
+2017-01-23T20:56:48.482752+00:00 app[web.1]: npm ERR! node v6.9.1
+2017-01-23T20:56:48.482619+00:00 app[web.1]: npm ERR! argv "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2017-01-23T20:56:48.482875+00:00 app[web.1]: npm ERR! npm  v3.10.8
+2017-01-23T20:56:48.484963+00:00 app[web.1]:
+2017-01-23T20:56:48.486594+00:00 app[web.1]: npm ERR! missing script: start
+2017-01-23T20:56:48.487244+00:00 app[web.1]: npm ERR!     <https://github.com/npm/npm/issues>
+2017-01-23T20:56:48.487061+00:00 app[web.1]: npm ERR! If you need help, you may report this error at:
+2017-01-23T20:56:48.486879+00:00 app[web.1]: npm ERR!
+2017-01-23T20:56:48.500039+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2017-01-23T20:56:48.499802+00:00 app[web.1]:
+2017-01-23T20:56:48.499967+00:00 app[web.1]: npm ERR! Please include the following file with any support request:
+2017-01-23T20:56:48.591683+00:00 heroku[web.1]: State changed from starting to crashed
+2017-01-23T20:56:48.582443+00:00 heroku[web.1]: Process exited with status 1
+2017-01-23T20:58:37.274009+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=e9efb31c-e535-4cac-8c48-62095ef42c87 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T20:58:37.710750+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=9834a2b0-fbd6-4183-a722-a748fe6068df fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:00:59.208964+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=8496db5a-0065-460f-b8b1-212d55bf3ba4 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:00:59.600581+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=4355104c-5d76-4450-bdc7-7e3e79eb111d fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:24.256831+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=1246fbdd-9c36-4f7e-a447-6dda821087a2 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:24.685760+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=da01d258-f2ba-4798-9554-2b9ede53be0e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:39.477273+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=062f5080-4354-477d-a74f-9761c32135f9 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:01:40.037669+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=ceef4580-5950-4246-aa66-d8f18f068019 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:04:21.092105+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=71932853-dab3-4c26-85f5-dc54f6bc6a52 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:04:21.771689+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=65565f7f-e072-4d2d-8af1-11a58757b32e fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:08:04.589126+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=0a5b48a7-acd2-4cfc-83d4-362a21d88796 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:08:05.258258+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=e3ab23e1-a447-4154-bd61-2bddb5751f51 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:14:05.570514+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=afternoon-castle-42115.herokuapp.com request_id=953dd9e5-df05-403a-9391-473d59018422 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+2017-01-23T21:14:05.824679+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=afternoon-castle-42115.herokuapp.com request_id=7ab84202-0105-4415-b344-6b30b4925a16 fwd="149.4.115.14" dyno= connect= service= status=503 bytes=
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git add -A
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git commit -m "testing"
+[Version_1 9b6c7a3] testing
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git push heroku master
+Everything up-to-date
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ git status
+On branch Version_1
+nothing to commit, working tree clean
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$ heroku open
+
+ASUSPRO@HtinLinn MINGW64 /d/NYCTTP_BootCamp/Assignments/Homework-Assignments/Aung-HtinLinn-day11-assignment-BulletinBoardApp/Simple_BulletinBoard (Version_1)
+$
