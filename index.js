@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded( {extended: false}));
 app.get('/', function(req, res){
   // pg.connect(dbURL, function(err, client, done){
   // below is for setting up database in Heroku database instead of using database from my machine
-  res.send("Hello");
+  // res.send("Hello");
   pg.connect(process.env.DATABASE_URL, function(err, client, done){
     if (err){
       return console.log("errorConnecting");
