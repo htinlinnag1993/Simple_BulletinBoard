@@ -37,7 +37,7 @@ app.get('/', function(req, res){
       }
       res.render("home", result);
       done();
-      pg.end();
+      // pg.end();
     });
   });
 });
@@ -54,7 +54,7 @@ app.get('/messages', function(req, res){
       }
       res.render("mBoard", result);
       done();
-      pg.end();
+      // pg.end();
     });
   });
 });
